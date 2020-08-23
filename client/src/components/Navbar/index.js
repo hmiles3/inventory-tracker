@@ -7,20 +7,20 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        Pupster
+        Inventory Tracker
       </Link>
       <div>
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
-              to="/"
+              to="/data"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/about"
+                window.location.pathname === "/data" || window.location.pathname === "/data"
                   ? "nav-link active"
                   : "nav-link"
               }
             >
-              About
+              Data
             </Link>
           </li>
           <li className="nav-item">
@@ -28,7 +28,7 @@ function Navbar() {
               to="/discover"
               className={window.location.pathname === "/discover" ? "nav-link active" : "nav-link"}
             >
-              Discover
+              Orders
             </Link>
           </li>
           <li className="nav-item">
@@ -36,7 +36,7 @@ function Navbar() {
               to="/search"
               className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
             >
-              Search
+              Inventory
             </Link>
           </li>
         </ul>
