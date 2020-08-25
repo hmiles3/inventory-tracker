@@ -2,7 +2,7 @@ import React from "react";
 
 function Data(){
     return(
-        <p>Test</p>
+        <h1>Data</h1>
     )
 }
 
