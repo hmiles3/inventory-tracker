@@ -17,7 +17,7 @@ class Orders extends Component {
         <h1>Orders</h1>
         {results.map(result => (
           <li key = {result.title}>
-            {result.title} <img src= {result.thumbnail}/>
+            {result.title} <img src= {result.thumbnail} alt = {result.title} />
           </li>
         ))}
       </ul>

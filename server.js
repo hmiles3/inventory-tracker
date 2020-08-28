@@ -22,6 +22,8 @@ mongoose.connect(
       useFindAndModify: false
     }
   );
+
+  //push that get route into a controller folder
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
