@@ -1,20 +1,25 @@
 import React from "react";
 import "./style.css";
+import DropdownItem from "../Dropdown.Item"
 
-function Dropdown() {
-
+function Dropdown(props) {
     
   return (
-    <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+    <div className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Items
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {props.options.map(currorder =>(
+              <DropdownItem 
+              className="dropdown-item" 
+              onClick={props.handleBtnClick}
+              value={currorder.id}
+              key={currorder.id}
+            >{currorder.name}</DropdownItem>
+            ))}
+        </div>
+    </div>
   );
 }
 
