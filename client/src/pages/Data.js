@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CanvasJSReact from '../canvasjs.react';
 import { Jumbotron } from 'reactstrap';
 import Dropdown from "../components/Dropdown";
+// import graphs from "./graphs.json";
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 
@@ -19,8 +20,28 @@ class Data extends Component {
 			{name:"Hot Spiced Cider", id: 7},
 			{name:"Isa's Cola de Mono", id: 8},
 			{name:"Amy's Barbecue Chicken Salad", id: 9}
+		],
+		dataPoints:  [
+			{ x: 1, y: 30 },
+			{ x: 2, y: 35 },
+			{ x: 3, y: 33 }
 		]
 	};
+
+	updateChart = event => {
+		event.preventDefault();
+		//based on the title go ahead and update the datapoints
+		//alert(graphs[0].title)
+		var result = this.state.dataPoints.concat()
+		var length = result.length
+		// var newY = this.state.dataPoints[length]
+		result[length-1].y = result[length-1].y + 1
+		console.log(result[length-1].y)
+		// const btnType = event.target.value;
+		this.setState({
+			dataPoints: result
+		})
+    }
 
     handleBtnClick = event => {
 		event.preventDefault();
@@ -42,18 +63,13 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
-				dataPoints: [
-                    { x: 1, y: 30 },
-                    { x: 2, y: 35 },
-                    { x: 3, y: 33 }
-				]
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
+				dataPoints: this.state.dataPoints
 			}]
         },
         {
@@ -67,17 +83,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 40 },
-                    { x: 2, y: 35 },
-                    { x: 3, y: 33 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -92,17 +107,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 5 },
-                    { x: 2, y: 10 },
-                    { x: 3, y: 33 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -117,17 +131,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 30 },
-                    { x: 2, y: 35 },
-                    { x: 3, y: 5 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -142,17 +155,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 30 },
-                    { x: 2, y: 5 },
-                    { x: 3, y: 33 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -167,17 +179,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 0 },
-                    { x: 2, y: 35 },
-                    { x: 3, y: 33 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -192,17 +203,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 3 },
-                    { x: 2, y: 3 },
-                    { x: 3, y: 3 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -217,17 +227,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 8 },
-                    { x: 2, y: 9 },
-                    { x: 3, y: 10 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -242,17 +251,16 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 33 },
-                    { x: 2, y: 30 },
-                    { x: 3, y: 35 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         },
@@ -267,28 +275,31 @@ class Data extends Component {
 				title: "Orders",
 			},
 			axisX: {
-				title: "Container",
-				prefix: "C",
+				title: "Day",
 				interval: 1
 			},
 			data: [{
-				type: "line",
-				toolTipContent: "Container {x}: {y} orders",
+				type: "spline",
+				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { x: 1, y: 10 },
-                    { x: 2, y: 20 },
-                    { x: 3, y: 30 }
+                    { y: 0 },
+                    { y: 30 },
+                    { y: 20 }
 				]
 			}]
         }
     ]
 		return (
 		<div>
+			 <button   onClick = {this.updateChart} className={(this.state.currId)?("btn btn-success"):("disabled")}>Update Chart</button>
+		
+
             <Jumbotron>
                 <h1 className="display-3">Choose the item data you would like to view:</h1>
                 <hr className="my-2" />
             </Jumbotron>
-		  	<Dropdown 
+			  <Dropdown 
+		
 		  	handleBtnClick = {this.handleBtnClick}
 		  	options = {this.state.order}
 		  />

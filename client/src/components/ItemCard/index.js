@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 // import API from "../utils/API";
+import CardBtn from "../CardBtn"
 
 function ItemCard(props) {
   return (
@@ -11,13 +12,18 @@ function ItemCard(props) {
       <div className="content">
         <ul>
           <li>
-            <strong>Item: </strong> {props.title}
+            <strong>{props.title}</strong>
           </li>
           <li>
-            <strong>Ingredients:</strong> {props.ingredients}
+            <p>Ingredients: {props.ingredients}</p>
           </li>
           <li>
-            <button>Order!</button>
+            <CardBtn 
+            onClick={props.handleBtnClick}
+            data-value="order"
+            >Order!
+            </CardBtn>
+            {/* I press this button, and Y goes up by one */}
           </li>
         </ul>
       </div>
