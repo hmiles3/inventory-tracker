@@ -18,8 +18,8 @@ class Data extends Component {
 			{name:"Chocolate-Cherry Thumbprints", id: 5},
 			{name:"Mean Woman Pasta", id: 6},
 			{name:"Hot Spiced Cider", id: 7},
-			{name:"Isa's Cola de Mono", id: 8},
-			{name:"Amy's Barbecue Chicken Salad", id: 9}
+			// {name:"Isa's Cola de Mono", id: 8},
+			{name:"Amy's Barbecue Chicken Salad", id: 8}
 		],
 		dataPoints:  [
 			{ x: 1, y: 30 },
@@ -28,20 +28,20 @@ class Data extends Component {
 		]
 	};
 
-	updateChart = event => {
-		event.preventDefault();
-		//based on the title go ahead and update the datapoints
-		//alert(graphs[0].title)
-		var result = this.state.dataPoints.concat()
-		var length = result.length
-		// var newY = this.state.dataPoints[length]
-		result[length-1].y = result[length-1].y + 1
-		console.log(result[length-1].y)
-		// const btnType = event.target.value;
-		this.setState({
-			dataPoints: result
-		})
-    }
+	// updateChart = event => {
+	// 	event.preventDefault();
+	// 	//based on the title go ahead and update the datapoints
+	// 	//alert(graphs[0].title)
+	// 	var result = this.state.dataPoints.concat()
+	// 	var length = result.length
+	// 	// var newY = this.state.dataPoints[length]
+	// 	result[length-1].y = result[length-1].y + 1
+	// 	console.log(result[length-1].y)
+	// 	// const btnType = event.target.value;
+	// 	this.setState({
+	// 		dataPoints: result
+	// 	})
+    // }
 
     handleBtnClick = event => {
 		event.preventDefault();
@@ -69,7 +69,11 @@ class Data extends Component {
 			data: [{
 				type: "spline",
 				toolTipContent: "Day {x}: {y} orders",
-				dataPoints: this.state.dataPoints
+				dataPoints: [
+                    // { y: 0 },
+                    // { y: 30 },
+                    // { y: 20 }
+				]
 			}]
         },
         {
@@ -90,9 +94,7 @@ class Data extends Component {
 				type: "spline",
 				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { y: 0 },
-                    { y: 30 },
-                    { y: 20 }
+					{ x: 1, y: 5 }
 				]
 			}]
         },
@@ -114,9 +116,8 @@ class Data extends Component {
 				type: "spline",
 				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { y: 0 },
-                    { y: 30 },
-                    { y: 20 }
+					{ x: 1, y: 5 },
+					{ x: 2, y: 0}
 				]
 			}]
         },
@@ -138,9 +139,13 @@ class Data extends Component {
 				type: "spline",
 				toolTipContent: "Day {x}: {y} orders",
 				dataPoints: [
-                    { y: 0 },
-                    { y: 30 },
-                    { y: 20 }
+					{ x: 1, y: 5 },
+					{ x: 2, y: 10 },
+					{ x: 3, y: 8 },
+					{ x: 4, y: 6 },
+					{ x: 5, y: 12 },
+					{ x: 6, y: 9 },
+					{ x: 7, y: 4 }
 				]
 			}]
         },
@@ -240,30 +245,30 @@ class Data extends Component {
 				]
 			}]
         },
-        {
-			animationEnabled: true,
-			exportEnabled: true,
-			theme: "light1", // "light1", "dark1", "dark2"
-			title:{
-				text: "Isa's Cola de Mono"
-			},
-			axisY: {
-				title: "Orders",
-			},
-			axisX: {
-				title: "Day",
-				interval: 1
-			},
-			data: [{
-				type: "spline",
-				toolTipContent: "Day {x}: {y} orders",
-				dataPoints: [
-                    { y: 0 },
-                    { y: 30 },
-                    { y: 20 }
-				]
-			}]
-        },
+        // {
+		// 	animationEnabled: true,
+		// 	exportEnabled: true,
+		// 	theme: "light1", // "light1", "dark1", "dark2"
+		// 	title:{
+		// 		text: "Isa's Cola de Mono"
+		// 	},
+		// 	axisY: {
+		// 		title: "Orders",
+		// 	},
+		// 	axisX: {
+		// 		title: "Day",
+		// 		interval: 1
+		// 	},
+		// 	data: [{
+		// 		type: "spline",
+		// 		toolTipContent: "Day {x}: {y} orders",
+		// 		dataPoints: [
+        //             { y: 0 },
+        //             { y: 30 },
+        //             { y: 20 }
+		// 		]
+		// 	}]
+        // },
         {
 			animationEnabled: true,
 			exportEnabled: true,
@@ -291,7 +296,7 @@ class Data extends Component {
     ]
 		return (
 		<div>
-			 <button   onClick = {this.updateChart} className={(this.state.currId)?("btn btn-success"):("disabled")}>Update Chart</button>
+			 {/* <button   onClick = {this.updateChart} className={(this.state.currId)?("btn btn-success"):("disabled")}>Update Chart</button> */}
 		
 
             <Jumbotron>

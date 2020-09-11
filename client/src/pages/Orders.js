@@ -3,7 +3,6 @@ import API from "../utils/API";
 import Wrapper from "../components/Wrapper"
 import Title from "../components/Title"
 import ItemCard from "../components/ItemCard"
-import items from "../items.json"
 
 class Orders extends Component {
   state = {
