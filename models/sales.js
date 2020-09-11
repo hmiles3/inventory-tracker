@@ -10,11 +10,24 @@ const salesSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    dataPoints: {
-        type: Array
-    }
-});
+    thumbnail: {
+        type: String,
+        required: true
+    },
+    ingredients: {
+        type: String,
+        required: true
+    },
+    dataPoints: [{
+        x: Number,
+        y: Number
+    }]
+},
+{
+    collection: "sales"
+}
+);
 
-const Sales = mongoose.model("Sales", salesSchema)
+const Sales = mongoose.model("Sale", salesSchema)
 
 module.exports = Sales;

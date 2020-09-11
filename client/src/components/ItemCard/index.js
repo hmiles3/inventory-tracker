@@ -21,6 +21,7 @@ function ItemCard(props) {
             <CardBtn 
             onClick={props.handleBtnClick}
             data-value="order"
+            id={props.id}
             >Order!
             </CardBtn>
             {/* I press this button, and Y goes up by one */}
