@@ -2,7 +2,7 @@ import React from "react";
 
 function Inventory(){
   return(
-    <h1>Inventory</h1>
+    <h1>Sign-in</h1>
   )
 }
 

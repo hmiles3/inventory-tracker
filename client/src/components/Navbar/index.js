@@ -36,7 +36,7 @@ function Navbar() {
               to="/inventory"
               className={window.location.pathname === "/inventory" ? "nav-link active" : "nav-link"}
             >
-              Inventory
+              Sign-in
             </Link>
           </li>
         </ul>
